@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 /*
- * Program Description:
+ * Description:
  *
  * This program is a Flappy Bird game built with Java Swing and 2D Graphics.
  * The player controls a bird that falls due to gravity and must fly through
@@ -11,7 +11,7 @@ import javax.swing.*;
  * panel. The score goes up by 1 for each pipe pair passed.
  *
  * How to use:
- *   - Run Project2Runner. The game window opens on the start screen.
+ *   - Run FlappyBirdRunner. The game window opens on the start screen.
  *   - Press SPACE or left-click to start and flap the bird.
  *   - Avoid the pipes. Click Restart to play again or Exit to quit.
  *
@@ -37,7 +37,7 @@ import javax.swing.*;
  *   - Pressing SPACE starts the game and flaps the bird upward.
  */
 
-public class Project2Runner {
+public class FlappyBirdRunner {
     public static void main(String[] args) throws Exception {
         new GameFrame(); // create and show the game window
 

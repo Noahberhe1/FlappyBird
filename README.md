@@ -44,5 +44,5 @@ A desktop Java game inspired by the classic Flappy Bird arcade-style experience.
 
 3. Start the game:
    ```powershell
-   java -cp bin Project2Runner
+   java -cp bin FlappyBirdRunner
    ```
