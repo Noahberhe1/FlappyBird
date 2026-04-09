@@ -1,48 +1,79 @@
 # FlappyBird
 
-A desktop Java game inspired by the classic Flappy Bird arcade-style experience. The player controls a bird flying through a series of moving pipes and must avoid crashing.
+A Flappy Bird game written in Java using Swing and 2D Graphics. Guide the bird through pipes without crashing.
 
-## Features
+## features
 
-- Smooth bird movement with gravity and jump controls.
-- Randomized pipe pair generation with gaps.
-- Simple collision detection between the bird and pipes.
-- Visual game window using Java Swing.
-- Clear separation between game logic and rendering.
+| feature                  | description                                     |
+| ------------------------ | ----------------------------------------------- |
+| start screen             | game waits for input before starting            |
+| gravity and flap physics | bird falls naturally, jumps on input            |
+| randomized pipes         | pipe gaps appear at different heights every run |
+| collision detection      | ends the game on pipe or floor contact          |
+| score tracking           | score increments for each pipe pair passed      |
+| restart and exit         | buttons appear on screen after game over        |
 
-## Project Structure
+## controls
 
-- `src/` : Java source files for game classes.
-- `bin/` : compiled `.class` files (ignored by Git).
-- `lib/` : external libraries or dependencies (currently unused).
-- `images/` : game image assets.
-- `README.md` : project documentation.
-- `.gitignore` : files and folders excluded from version control.
+| input            | action                  |
+| ---------------- | ----------------------- |
+| `space`          | flap the bird           |
+| `left click`     | flap the bird           |
+| `restart` button | restart after game over |
+| `exit` button    | close the game          |
 
-## Controls
+## requirements
 
-- `Space` or `left mouse-click` : make the bird flap/jump.
-- `Close Window` : exit the game.
+- Java JDK 17 or newer
+- `javac` and `java` available in your terminal
+- VSCode with the Extension Pack for Java, or any Java-compatible IDE
 
-## Prerequisites
+## how to run
 
-- Java JDK installed (Java 17 or newer recommended).
-- `JAVA_HOME` properly set, or the `java` and `javac` commands available in your terminal.
-- A terminal or command prompt opened in the project root directory.
+open a terminal in the project root folder (`FlappyBird/`), then:
 
-## How to Run
+**compile:**
 
-1. Open a terminal and navigate to the project folder:
-   ```powershell
-   cd "C:\Users\your_username\Documents\FlappyBird"
-   ```
-2. Compile the project source files:
+```powershell
+javac -d bin src\*.java
+```
 
-   ```powershell
-   javac -d bin src\*.java
-   ```
+**run:**
 
-3. Start the game:
-   ```powershell
-   java -cp bin FlappyBirdRunner
-   ```
+```powershell
+java -cp bin FlappyBirdRunner
+```
+
+## project structure
+
+```
+FlappyBird/
+├── images/
+│   ├── bottompipe.png
+│   ├── flappybird.png
+│   ├── flappybirdbg.png
+│   └── toppipe.png
+├── src/
+│   ├── Bird.java               # bird entity
+│   ├── FlappyBird.java         # game logic and rendering
+│   ├── FlappyBirdRunner.java   # entry point
+│   ├── GameFrame.java          # game window
+│   └── Pipe.java               # pipe entity
+└── README.md
+```
+
+## key classes
+
+**FlappyBird.java**
+
+- game loop via a Timer firing 60 times per second
+- handles bird movement, pipe spawning, collision detection, and all rendering
+- implements ActionListener, KeyListener, and MouseListener
+
+**GameFrame.java**
+
+- sets up the JFrame window and adds the game panel
+
+**Bird.java / Pipe.java**
+
+- entity classes storing position, size, and image for each object
